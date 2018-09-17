@@ -21,7 +21,40 @@
 
         <!-- Définir le corp de la page : contenu à afficher -->
         <body>
-            <h1>Hello World!</h1>   
+            <!-- Titre principal : UNIQUE -->
+            <h1>Hello World!</h1>
+
+            <!-- Balise de sous-tire de h2 à h6 (max) : MULTIPLE -->
+            <h2>Salut le monde</h2> 
+
+            <!-- Liste numérotée : HTML, CSS, Javascript -->
+            <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ol>
+
+            <!-- Liste non-numérotée : Bob Kahn,  Winston Clef, Timothy Berners Lee -->
+            <ul>
+                <li>Bob Kahn</li>
+                <li>Winston Clef</li>
+                <li>Timothy Berners Lee</li>
+            </ul>
+
+            <!-- Créer un lien vers la page http://google.fr dans une nouvelle fenêtre -->
+            <a href="http://google.fr" target="_blank">Google</a>
+
+            <!-- Créer un formulaire de connexion : email, mot de passe -->
+            <form action="#">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password">
+
+                <!-- Ajouter un bouton pour la soumission du formulaire -->
+                <button type="submit">Connexion</button>
+            </form>
         </body>
     </html>
     <!-- Fermer la balise HTML -->

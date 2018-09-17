@@ -1,0 +1,47 @@
+/* 
+Reset
+Supprimer ou redéfinir les styles du navigateur (user agent stylesheet)
+*/
+
+    /* Sélectionner toutes les balises du DOM */
+    *{
+        /* Supprimer les marge extérieur */
+        margin: 0;
+        
+        /* Supprimer les marge intérieurs */
+        padding: 0;
+    }
+
+    html{
+        /* Passer d'une base 16 à une base 10 */
+        font-size: 62.5%;
+    }
+
+    body{
+        background: #131313;
+        color: white;
+    }
+
+    img{
+        /* Les images sont jamais plus grandes que leur parent */
+        max-width: 100%;
+    }
+
+    a {
+        color: inherit; /* Héritage de la définition du parent */
+        text-decoration: none;
+    }
+/**/
+
+/* 
+Style header
+*/
+    header img{
+        width: 5rem;
+    }
+
+    nav li{
+        /* Changer le type de balise */
+        display: inline-block;
+    }
+/**/
