@@ -18,6 +18,7 @@ Supprimer ou redéfinir les styles du navigateur (user agent stylesheet)
     }
 
     body{
+        font-size: 1.5rem;
         background: #131313;
         color: white;
     }
@@ -31,17 +32,54 @@ Supprimer ou redéfinir les styles du navigateur (user agent stylesheet)
         color: inherit; /* Héritage de la définition du parent */
         text-decoration: none;
     }
+
+    ul{
+        /* Supprimer le style des LI */
+        list-style: none;
+    }
+
+    h1, h2, h3, nav, footer{
+        font-family: 'Arial', sans-serif;
+    }
 /**/
 
 /* 
 Style header
 */
-    header img{
-        width: 5rem;
+    header{
+        /* La hauteur est de 100% de la hauteur de l'écran (vue) */
+        height: 100vh;
+
+        /* Image de fond */
+        background-image: url('../img/background.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
     }
 
-    nav li{
+    header img{
+        width: 5rem;
+        margin: 3rem 0;
+    }
+
+    nav{
+        font-weight: 900;
+        font-size: 1.7rem;
+        color: #c5c5c5;
+        text-align: center; /* Centrer le contenu de la NAV */
+
+        border-bottom: .2rem solid rgba(255, 255, 255, .3);
+        padding-bottom: 2rem;
+        max-width: 30rem; /* Limiter la largeur de la balise */
+        margin: auto; /* Centrer une balise de type block réduite en largeur */
+    }
+
+    /* Sélectionner toutes les balises LI de la NAV, sauf la première */
+    nav li:not(:nth-child(1)){
         /* Changer le type de balise */
         display: inline-block;
+
+        /* Ajouter une marge à gauche et à droite */
+        margin: 0 .5rem;
     }
 /**/
