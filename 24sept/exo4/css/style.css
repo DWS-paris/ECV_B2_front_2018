@@ -39,44 +39,7 @@ Reset
 /* 
 Gestion des boîtes flexibles
 */
-    /* Définir une boite flexible
-    main, section{
-        display: -webkit-flex;
-        display: -o-flex;
-        display: -moz-flex;
-        display: flex;
-
-        -webkit-flex-wrap: wrap;
-        -moz-flex-wrap: wrap;
-        -o-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
     
-
-    main, main section{
-        -webkit-justify-content: space-between;
-        -moz-justify-content: space-between;
-        -o-justify-content: space-between;
-        justify-content: space-between;
-    }
-    
-
-    section article:nth-child(1), section article:nth-child(2){
-        width: calc(50% - 2rem);
-    }
-
-    section article:nth-child(3){
-        width: 100%;
-    }
-    
-
-    main section{
-        width: calc(70% - 2rem) ;
-    }
-
-    main aside{
-        width: calc(30% - 2rem) ;
-    }
 */
 
 /*
@@ -90,9 +53,44 @@ Sélectionner toutes les balises <article> sauf quand elles sont les dernières
 /* 
 Requêtes media
 */
-    @media screen and (min-width: 70rem){
-        body{
-            display: none;
+    @media screen and (min-width: 700px){
+
+        /* Définir une boite flexible */
+        main, section{
+            display: -webkit-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            display: flex;
+
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        
+
+        main, main section{
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -o-justify-content: space-between;
+            justify-content: space-between;
+        }
+        
+
+        section article:nth-child(1), section article:nth-child(2){
+            width: calc(50% - 2rem);
+        }
+
+        section article:nth-child(3){
+            width: 100%;
+        }
+        
+        main section{
+            width: calc(70% - 2rem) ;
+        }
+
+        main aside{
+            width: calc(30% - 2rem) ;
         }
     }
 /**/
