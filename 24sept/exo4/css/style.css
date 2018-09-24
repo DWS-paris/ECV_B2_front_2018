@@ -1,0 +1,60 @@
+/*
+Reset
+*/
+    *{
+        /* Supprimer les marges de toutes les balises HTML */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Passer d'une base 16 à une base 10 */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        padding: 6rem;
+    }
+
+    header, main, footer, section, aside, article{
+        padding: 2rem;
+    }
+
+    header, main, footer{
+        border: .5rem solid black;
+    }
+
+    section{
+        border: .5rem solid green;
+    }
+
+    aside{
+        border: .5rem solid blue;
+    }
+
+    article{
+        border: .5rem solid yellow;
+    }
+/**/
+
+/* 
+Gestion des boîtes flexibles
+*/
+    main, section{
+        display: -webkit-flex;
+        display: -o-flex;
+        display: -moz-flex;
+        display: flex;
+    }
+
+    section article:nth-child(1), section article:nth-child(2){
+        width: 50%;
+    }
+
+    section article:nth-child(3){
+        width: 100%;
+    }
+
+    
+/**/

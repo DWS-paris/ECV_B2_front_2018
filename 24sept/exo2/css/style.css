@@ -1,0 +1,95 @@
+/*
+Reset
+*/
+    *{
+        /* Supprimer les marges de toutes les balises HTML */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Passer d'une base 16 à une base 10 */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        padding: 6rem;
+    }
+/**/
+
+/* 
+Style nav
+*/
+    nav{
+        padding: 2rem;
+        border: .5rem solid red;
+        margin-bottom: 2rem;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+    }
+
+    nav li{
+        padding: 1rem;
+        border: .5rem solid black;
+    }
+/**/
+
+/* 
+Mettre les liens de la navigation sur une ligne
+-> Changer le type des balises LI de la NAV
+*/
+    nav li{
+        display: inline-block;
+    }
+/**/
+
+
+/* 
+Aligner tous les ien de la 2ème NAV à droite sauf le premier
+*/
+    /* Aligner tous les liens à droite */
+    nav:nth-of-type(2) ul{
+        text-align: right;
+    }
+
+    /* Mettre le premier lien à gauche */
+    nav:nth-of-type(2) li:first-child {
+        position: absolute;
+
+        /* Penser aux marges */
+        left: 2rem;
+        top: 2rem;
+    }
+/**/
+
+/* 
+Aligner tous les liens de la 3ème NAV à gauche sauf le dernier à droite
+*/
+    nav:nth-of-type(3) li:last-child{
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+    }
+/**/
+
+/* 
+Aligner tous les liens de la 3ème NAV à gauche sauf le dernier à droite
+*/
+    nav:nth-of-type(4){
+       text-align: center;
+    }
+
+    nav:nth-of-type(4) li:first-child{
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+    }
+
+    nav:nth-of-type(4) li:last-child{
+        position: absolute;
+        left: 2rem;
+        top: 2rem;
+    }
+/**/

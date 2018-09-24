@@ -1,0 +1,29 @@
+/*
+Reset
+*/
+    *{
+        /* Supprimer les marges de toutes les balises HTML */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Passer d'une base 16 à une base 10 */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        padding: 6rem;
+    }
+/**/
+
+/* 
+Habiller une image avec du texte
+*/
+    img {
+        float: right;
+        margin: 0 0 1rem 2rem;
+        width: 20rem;
+    }
+/**/
