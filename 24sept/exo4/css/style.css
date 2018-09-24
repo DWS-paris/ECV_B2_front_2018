@@ -5,6 +5,12 @@ Reset
         /* Supprimer les marges de toutes les balises HTML */
         margin: 0;
         padding: 0;
+
+        /* Ajouter le padding et le boder dans le calcule de la taille de balises */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     /* Passer d'une base 16 à une base 10 */
@@ -17,7 +23,7 @@ Reset
         padding: 6rem;
     }
 
-    header, main, footer, section, aside, article{
+    header, main, footer{
         padding: 2rem;
     }
 
@@ -25,36 +31,68 @@ Reset
         border: .5rem solid black;
     }
 
-    section{
-        border: .5rem solid green;
-    }
-
-    aside{
-        border: .5rem solid blue;
-    }
-
-    article{
-        border: .5rem solid yellow;
+    main{
+        margin: 3rem auto;
     }
 /**/
 
 /* 
 Gestion des boîtes flexibles
 */
+    /* Définir une boite flexible
     main, section{
         display: -webkit-flex;
         display: -o-flex;
         display: -moz-flex;
         display: flex;
+
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
+    
+
+    main, main section{
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+    }
+    
 
     section article:nth-child(1), section article:nth-child(2){
-        width: 50%;
+        width: calc(50% - 2rem);
     }
 
     section article:nth-child(3){
         width: 100%;
     }
-
     
+
+    main section{
+        width: calc(70% - 2rem) ;
+    }
+
+    main aside{
+        width: calc(30% - 2rem) ;
+    }
+*/
+
+/*
+Sélectionner toutes les balises <article> sauf quand elles sont les dernières
+*/
+    article:not(:last-of-type){
+        margin-bottom: 2rem;
+    }
+/**/
+
+/* 
+Requêtes media
+*/
+    @media screen and (min-width: 70rem){
+        body{
+            display: none;
+        }
+    }
 /**/
