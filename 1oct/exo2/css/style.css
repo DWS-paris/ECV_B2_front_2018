@@ -1,0 +1,215 @@
+/* 
+Style reset
+*/
+    *{
+        /* Supprimer toutes les marges de toutes les balises */
+        margin: 0;
+        padding: 0;
+
+        /* Inclure les padding et les border dans la taille des balises */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* 
+    Ne jamais changer la taille de HTML et de BODY
+    et limiter un maximumx l'utilisation de CSS sur ces balises
+    */
+        /* Passer d'une base 16px à une base 10px */
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            font-size: 1.5rem; /* => 62.5% x 1.5 = 15px */
+            text-align: center;
+            padding: 4rem
+        }
+    /**/
+
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+/* 
+Layout
+*/
+    header, section, footer{
+        padding: 2rem;
+        border: .5rem solid #eee;
+        margin-bottom: 2rem;
+    }
+
+    header, main, footer{
+        max-width: 95rem;
+        margin: 0 auto 2rem auto;
+    }
+/**/
+
+/* 
+Header
+*/
+    header{
+        position: relative;
+        text-align: left;
+    }
+
+    nav{
+        text-align: right;
+        /* Changer le positionnement de la NAV */
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    /* Sélectionner la balise quii contient la class fas ET fa-bars */
+    .fas.fa-bars{
+        background-color: red;
+        color: white;
+        padding: 1rem;
+
+        /* Mettre en place un effet de transition */
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+    }
+
+    /* Changer la couleur de fond de la balise ".fas.fa-bars" au survole */
+    .fas.fa-bars:hover{
+        background-color: black;
+    }
+
+    nav ul {
+        background: #eee;
+        padding: 0rem;
+        list-style: none;
+        height: 0;
+        overflow: hidden;
+
+        /* Mettre en place un effet de transition */
+        -webkit-transition: height .5s;
+        -moz-transition: height .5s;
+        -o-transition: height .5s;
+        transition: height .5s;
+    }
+/**/
+
+
+/* 
+Requêtes média
+*/
+    /*
+    Interaction du burger menu pour les écran d'une taille maximale de 900px
+    */
+        @media screen and (max-width: 900px){
+            /* Sélection la balise ul qui suit la balise ".fas.fa-bars" */
+            .fas.fa-bars:hover + ul, nav ul:hover{
+                height: 5rem;
+                padding: 1rem
+            }
+        }
+    /**/
+    
+    /* 
+    Format tablette/portrait ou smartphone/paysage (+/-)
+    - Requête sur les écrants d'une largeur minimale de 620px
+    */
+        @media screen and (min-width: 620px){
+            /* Main */
+                main{
+                    /* Gestion des boites flottante */
+                    display: -webkit-flex;
+                    display: -moz-flex;
+                    display: -o-flex;
+                    display: flex;
+
+                    /* Configuration des dépassement */
+                    -webkit-flex-wrap: wrap;
+                    -moz-flex-wrap: wrap;
+                    -o-flex-wrap: wrap;
+                    flex-wrap: wrap;
+
+                    /* Configuration des blancs tournants */
+                    -webkit-justify-content: space-between;
+                    -moz-justify-content: space-between;
+                    -o-justify-content: space-between;
+                    justify-content: space-between;
+                }
+
+                main section{
+                    width: calc(50% - 1rem);
+                    text-align: left;
+                }
+
+                /* Sélectionner la dernière section du main */
+                main section:last-of-type{
+                    width: 100%;
+                    text-align: center;
+                }
+            /**/
+        }
+    /**/
+
+    /* 
+    Format tablette/paysage ou desktop (+/-)
+    - Requête sur les écrants d'une largeur minimale de 900px
+    */
+        @media screen and (min-width: 900px){
+            /* 
+            Header
+            */
+                .fas.fa-bars{
+                    /* Masquer le burger menu */
+                    display: none;
+                }
+
+                /* Repositionner la nav */
+                nav{
+                    position: initial;
+                    text-align: left;
+                }
+
+                nav ul{
+                    height: auto;
+                    padding: 1rem;
+                }
+
+                /* Mettre les liens de la nav sur une ligne */
+                nav li{
+                    display: inline-block;
+                    margin-right: 1rem;
+                }
+            /**/
+
+            /* 
+            Gestion de l'order des balises flottantes
+            */
+                section{
+                    -webkit-order: 1;
+                    -moz-order: 1;
+                    -o-order: 1;
+                    order: 1;
+                }
+                
+                section:nth-of-type(1){
+                    -webkit-order: 2;
+                    -moz-order: 2;
+                    -o-order: 2;
+                    order: 2;
+                }
+
+                section:nth-of-type(2){
+                    -webkit-order: 3;
+                    -moz-order: 3;
+                    -o-order: 3;
+                    order: 3;
+                }
+            /**/
+        }
+    /**/
+    
+/**/
