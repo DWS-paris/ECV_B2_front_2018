@@ -1,0 +1,214 @@
+/* 
+Reset
+Supprimer ou redéfinir les styles du navigateur (user agent stylesheet)
+*/
+    /* Ajouter des variables dans le document */
+    :root{
+        --main-color: orange;
+        --shadow-color: #a56a00;
+    }
+
+    /* Sélectionner toutes les balises du DOM */
+    *{
+        /* Supprimer les marge extérieur */
+        margin: 0;
+        
+        /* Supprimer les marge intérieurs */
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        /* Passer d'une base 16 à une base 10 */
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+        background: #131313;
+        color: white;
+    }
+
+    img{
+        /* Les images sont jamais plus grandes que leur parent */
+        max-width: 100%;
+    }
+
+    a {
+        color: inherit; /* Héritage de la définition du parent */
+        text-decoration: none;
+    }
+
+    ul{
+        /* Supprimer le style des LI */
+        list-style: none;
+    }
+
+    h1, h2, h3, nav, footer{
+        font-family: sans-serif;
+    }
+
+    h2, h3{
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin-bottom: 2rem
+    }
+
+    h3{
+        text-transform: none;
+        color: var(--main-color);
+        margin-top: 6rem;
+    }
+
+    footer{
+        opacity: .5;
+        padding: 1rem;
+    }
+/**/
+
+/* 
+Style formulaire
+*/
+    /* Les élement d'un formulaire sont de type inline de base */
+    input, textarea, button{
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+    textarea{
+        min-height: 15rem;
+    }
+/**/
+
+/* 
+Style header
+*/
+    header{
+        /* Image de fond */
+        background-image: url('../img/background.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        height: 60vh;
+    }
+
+    header img{
+        width: 5rem;
+        margin: 3rem 0;
+    }
+
+    nav{
+        font-weight: 900;
+        font-size: 1.7rem;
+        color: #c5c5c5;
+        text-align: center; /* Centrer le contenu de la NAV */
+
+        border-bottom: .2rem solid rgba(255, 255, 255, .3);
+        padding-bottom: 2rem;
+        max-width: 30rem; /* Limiter la largeur de la balise */
+        margin: 0 auto 4rem auto; /* Centrer une balise de type block réduite en largeur */
+    }
+
+    /* Sélectionner toutes les balises LI de la NAV, sauf la première */
+    nav li:not(:nth-child(1)){
+        /* Changer le type de balise */
+        display: inline-block;
+
+        /* Ajouter une marge à gauche et à droite */
+        margin: 0 .5rem;
+    }
+
+    /* 
+    Tricks design H1 
+    */
+        h1{
+            font-size: 6rem;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        h1 em{
+            font-size: .3em; /* Moitier de la font-size du parent */
+            font-style: normal;
+            font-weight: 100;
+            font-family: serif;
+            display: block;
+            margin-top: 2rem
+        }
+    /**/
+/**/
+
+
+/* 
+Style main
+*/
+    main{
+        padding: 12rem 6rem 6rem 6rem;
+    }
+
+    section{
+        margin-bottom: 12rem;
+    }
+
+    main a{
+        color: var(--main-color);
+    }
+
+    main li{
+        margin-bottom: 1rem;
+    }
+
+    /* Sélectionner la balise A qui suit une balise UL */
+    ul + a, button{
+        background-color: var(--main-color);
+        padding: 1rem;
+        color: black;
+        text-transform: uppercase;
+        border-bottom: .5rem solid var(--shadow-color);
+        display: inline-block;
+        margin-top: 2rem;
+    }
+/**/
+
+
+/* 
+Requête media
+*/
+    /* Pour les écrans d'une taile minimal de 900px */
+    @media screen and (min-width: 900px){
+        /* Passer les projest sur 3 colonnes */
+        section:nth-of-type(2) ul{
+            -webkit-display: flex;
+            -moz-display: flex;
+            -o-display: flex;
+            display: flex;
+
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -o-justify-content: space-between;
+            justify-content: space-between;
+        }
+        section:nth-of-type(2) li{
+            width: calc( 33.333% - 1rem );
+        }
+
+        main{
+            max-width: 45rem;
+            margin: auto;
+        }
+    }
+/**/
