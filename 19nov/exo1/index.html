@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Botswana farmer registration</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <!-- Ouverture de la page -->
+        <header>
+            <h1>Botswana farmer registration</h1>
+        </header>
+
+        <!-- Contenu principal -->
+        <main>
+            <section>
+                <h2>Add farmer</h2>
+                <!-- 
+                Créer un formulaire pour générer un fermier (cf. Javascript)
+                -->
+                <form action="add_farmer.php">
+                    <input type="text" name="first_name" placeholder="Indiquer le prénom">
+                    <input type="text" name="last_name" placeholder="Indiquer le nom">
+                    <input type="number" name="age" placeholder="Indiquer l'âge">
+                    <label>Définir l'alphabétisation</label>
+                    <select name="literate">
+                        <option value="NULL" selected >- Sélectionner -</option>
+                        <option value="1">Lettré</option>
+                        <option value="0">Illettré</option>
+                    </select>
+    
+                    <!-- Ajouter un bbouton pour la validation du formulaire -->
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Farmer list</h2>
+                <!-- 
+                <article>
+                    <h3>Nom complet du fermier</h3>
+                    <p>Région</p>
+                    <p>Age</p>
+                    <p>Lettré/Illettré</p>
+                </article> 
+                -->
+            </section>
+        </main>
+        
+        <!-- Fermetur de la page -->
+        <footer>Under WTFPL public licence</footer>
+
+        <!-- Intégrer le script juste avant la fin du BODY -->
+        <script src="./js/main.js"></script>
+    </body>
+</html>
