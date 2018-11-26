@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 1 : révision formulaire Javascript</title>
+        <link rel="stylesheet" href="./css/milligram.css">
+    </head>
+    <body>
+        
+        <header>
+            <h1>Exo 1 : révision formulaire Javascript</h1>
+        </header>
+
+        <main>
+            <section>
+                <!-- 
+                    Créer un formulaire :
+                        - email
+                        - password
+                        - type (checkboxe) :
+                            - user
+                            - admin
+                -->
+                <form action="#">
+                    <label id="labelEmail">Votre email</label>
+                    <input type="email" placeholder="exemple@site.com">
+
+                    <label id="labelPassword">Votre mot de passe</label>
+                    <input type="password" placeholder="Min. 5 caractères">
+
+                    <label>Type</label>
+                    <ul>
+                        <li><input type="radio" name="type" value="user" checked> Utilisateur</li>
+                        <li><input type="radio" name="type" value="admin"> Administrateur</li>
+                    </ul>
+
+                    <button type="submit">Inscription</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Liste des utilisateur</h2>
+                <ul></ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Under WTFPL Public Licence</p>
+        </footer>
+
+        <!-- Ajouter le script juste avant la fin du body -->
+        <script src="./js/main.js"></script>
+    </body>
+</html>
