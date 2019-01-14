@@ -10,8 +10,7 @@ Attendre le chargement du DOM
 
 
         // Capter la soumission du formulaire
-            // - Si le formualire est valide ajouter un article dans le DOM et vider le formulaire
-            // - Si le formualire n'est pas valide Afficher un message d'erreur dans les labels
-
+            // - Si le formulaire est valide ajouter un article dans le DOM et vider le formulaire
+            // - Si le formulaire n'est pas valide Afficher un message d'erreur dans les labels
     });
 // 
