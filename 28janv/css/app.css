@@ -110,11 +110,24 @@ Header
         transform: translate(-50%, 50%);
     }
 
-    /* Pour l'animation */
-    nav {
-        height: 0;
-        overflow: hidden;
-    }
+    /* 
+    Pour l'animation 
+    */
+        nav {
+            height: 0;
+            overflow: hidden;
+            
+            -webkit-transition: .3s all;
+            -moz-transition: .3s all;
+            -ms-transition: .3s all;
+            -o-transition: .3s all;
+            transition: .3s all;
+        }
+
+        nav.open{
+            height: 14rem;
+        }
+    /**/
 /**/
 
 /* 
