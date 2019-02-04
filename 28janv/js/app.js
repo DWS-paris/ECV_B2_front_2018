@@ -10,6 +10,7 @@ Attendre le chargement du DOM
             let navigation = document.querySelector('nav');
             let navLinks = document.querySelectorAll('nav a');
             let navIsOpen = false;
+            let mainTag = document.querySelector('main');
         //
 
         /* 
@@ -38,9 +39,27 @@ Attendre le chargement du DOM
             // Fonction pour gérer la navigation
             const mainNavigation = () => {
                 // Boucle sur la collection navLinks
-                for( let i = 0; i < navLinks.length; i++ ){
-                    
-                }
+                for( let link of navLinks ){
+                    // Capter le click sur chaque lien
+                    link.addEventListener( 'click', (event) => {
+                        event.preventDefault();
+
+                        // Récupérer la valeur de l'attibut HREF
+                        asyncFetch( link.getAttribute('href') );
+                    });
+                };
+            };
+
+            // Fonction async pour charger le contenu HTML des pages
+            const asyncFetch = async (pageHtml) => {
+                // Requêtes sur une fichier
+                const response = await fetch(`./partials/${pageHtml}`);
+
+                // Transformation de la réponse
+                const htmlResponse = await response.text();
+
+                // Ajouter le contenu HTML dans la balise main
+                mainTag.innerHTML = htmlResponse;
             };
         //
 
