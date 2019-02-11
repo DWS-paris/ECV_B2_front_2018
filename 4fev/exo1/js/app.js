@@ -11,7 +11,6 @@ Attendre le chargement du DOM
             let navLinks = document.querySelectorAll('nav a');
             let navIsOpen = false;
             let mainTag = document.querySelector('main');
-            let activePage = undefined;
         //
 
         /* 
@@ -52,31 +51,35 @@ Attendre le chargement du DOM
             };
 
             // Fonction async pour charger le contenu HTML des pages
-            const asyncFetch = async (pageHtml) => {
+            const asyncFetch = async (page) => {
                 // Requêtes sur une fichier
-                const response = await fetch(`./partials/${pageHtml}`);
+                const response = await fetch(`./data/${page}.json`);
 
-                // Transformation de la réponse
-                const htmlResponse = await response.text();
+                // Connaitre le type d'une variable : typeof
+                console.log(typeof response);
+                
+                /* 
+                L'objet response à une propriétré "ok" qui permet de
+                savoir si le chargement à bien fonctionné.
+                - Il faut tester si la valeur de "response.ok" est "true"
+                */
+                if( response.ok ){ // "response.ok" eg. "response.ok === true"
+                
+                    /* 
+                    Selon la réponse attendu, il faut la convertir au bon format
+                    - HTML : const convertedResponse = await response.text();
+                    - JSON : const convertedResponse = await response.json();
+                    */
+                    const convertedResponse = await response.json();
 
-                // Ajouter le contenu HTML dans la balise main
-                mainTag.innerHTML = htmlResponse;
+                    // Ajouter les balises HTML dans le MAIN
+                    mainTag.innerHTML = `
+                        <h2>${convertedResponse.title}</h2>
+                        <p>${convertedResponse.content}</p>
+                    `;
 
-                // Définir la page active
-                activePage = pageHtml;
-
-                // Vérifier la page active pour capter le formulaire
-                if( pageHtml === 'contact.html' ){
-                    // Capter la soumission du formulaire
-                    contactForm();
-                }
+                } else{ console.log('Erreur de chargement.') };
             };
-
-            // Fonction pour la soumission du formulaire
-            const contactForm = () => {
-                let myForm = document.querySelector('form');
-                console.log(myForm);
-            }
         //
 
 
